@@ -48,6 +48,10 @@ const app = new express();
 
 app.use(express.static("dist"));
 
+app.get("/data", async (_req, res) => {
+  res.json(data);
+});
+
 app.get("/", async (_req, res) => {
   // we are not going to use req, so
   // prepend with _ to let others know it is not used
